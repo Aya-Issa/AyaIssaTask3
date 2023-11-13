@@ -12,13 +12,13 @@ export default function VideoCaptureScreen() {
     try {
       const video = await ImageCropPicker.openCamera({
         mediaType: 'video',
-        compressVideoPreset: 'MediumQuality', // Adjust video quality as needed
+        compressVideoPreset: 'MediumQuality', 
       });
 
       const uri = video.path;
       setVideoUri(uri);
 
-      const destinationPath = '/storage/emulated/0/Movies/React Native/'; // Adjust the path as needed
+      const destinationPath = '/storage/emulated/0/Movies/React Native/'; 
 
       const success = await RNFS.moveFile(uri, destinationPath + video.modificationDate + '.mp4');
 
